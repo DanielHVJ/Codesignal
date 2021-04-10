@@ -1,8 +1,9 @@
+## THE Journey Begins
 def centuryFromYear(year):
     cen = 0
     cen = (year + 99)//100
     return cen
-
+    ## con 99 aumentas un siglo para luego dividir entre 100
 
 def checkPalindrome(inputString):
     return inputString == inputString[::-1]
@@ -12,15 +13,20 @@ def checkPalindrome(inputString):
     else:
         print("false")
 
+
+## Edge of the Ocean
+
 def adjacentElementsProduct(inputArray):
-    l = len(inputArray) 
+    ele = len(inputArray) 
     sum = []
-    for i in range(l-1):
+    for i in range(ele-1):
         sum.append(inputArray[i] * inputArray[i+1]) 
         print(sum)
     return max(sum)
 
 adjacentElementsProduct([3, 6, -2, -5, 7, 3])
+
+## Shape area
 
 def shapeArea(n):
     if n == 1:
