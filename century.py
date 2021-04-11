@@ -39,46 +39,62 @@ shapeArea(2)
 def makeArrayConsecutive2(statues):
     return (max(statues)-min(statues)+1)-len(statues)
 
+## Siempre se añade un 1 dentro o fuera    
+
 makeArrayConsecutive2([2,3,8,4])
 
+## NO ENTIENDO
 
 def almostIncreasingSequence(sequence):
     removed_one = False
     prev_maxval = None
     maxval = None
+
     for i in sequence:
         if not maxval or i > maxval:
             prev_maxval = maxval
             maxval = i
+            print(maxval)
         elif not prev_maxval or i > prev_maxval:
             if removed_one:
                 return False
             removed_one = True
             maxval = i
+            print(maxval)
         else:
             if removed_one:
                 return False
             removed_one = True
     return True
 
+sequence = [1, -5, 3, 2]
+
+almostIncreasingSequence(sequence)
+
+
+## Haunted rooms
 
 def matrixElementsSum(matrix):
     sum_matrix = 0
-    haunted_room = list()
+    
+    h_room = list()
     for i in range(0, len(matrix)):
-        for j in range(len(matrix)):
+        print('I values',i)
+        for j in range(len(matrix[0])):
             if matrix[i][j] == 0:
-                haunted_room.append(j)
-                print(haunted_room)
-        for k in range(len(matrix)):
-            if k not in haunted_room:
+                h_room.append(j)
+                print('J values',j)
+        for k in range(len(matrix[0])):
+            if k not in h_room:
                 sum_matrix += matrix[i][k]
+                print('K values',k)
     return sum_matrix
+# es un ejemplo de recursion, una vez J en la anterior fila[i], K ya no aparece en la próxima fila[i+1], es por eso que J se define antes que K.
 
-
-matrix =[[1, 1, 1, 0], 
-        [0, 5, 0, 2], 
-        [2, 1, 0, 2]]
+matrix=[[4,0,1], 
+        [10,7,0], 
+        [0,0,0], 
+        [9,1,2]]
 
 matrixElementsSum(matrix)
 
