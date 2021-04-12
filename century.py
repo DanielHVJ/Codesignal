@@ -105,24 +105,30 @@ for i in range(len(matrix)):
 print(summ)              
 
 
+### 3- Smooth Sailing
+
+## return longest string
+
 def allLongestStrings(inputArray):
     maxLen = 0
     for i in range(0,len(inputArray)):
-        maxLen = max(maxLen,len(inputArray[i]))
-    
+        maxLen = max(maxLen, len(inputArray[i])) # len es el key= key function where each argument 
+                                                #is passed, and comparison is performed based on its return value
     return [i for i in inputArray if len(i)==maxLen]
 
 inputArray = ["aba", "aa", "ad", "vcd", "aba"]
 allLongestStrings(inputArray)
 
 
-#-----------
+#----------- NO ENTIENDO
 def common_character_count(str1: str, str2: str):
-    str1_set = set(str2)
+    str1_set = set(str2) #para que sea iterable
     result = 0
     for letter in str1_set:
         str1_count = str1.count(letter)
+        print('1',str1_count)
         str2_count = str2.count(letter)
+        print('2',str2_count)
         result += min([str1_count, str2_count])
     return result
 
@@ -131,29 +137,30 @@ s2 = "adcaa"
 
 print(common_character_count(s1, s2))
 
+
 ## IS LUCKY
 
 def isLucky(n):
-    s = str(n)
-    first, second = s[:len(s)//2], s[len(s)//2:]
+    st = str(n)
+    first, second = st[:len(st)//2], st[len(st)//2:]
     first = sum(map(int, list(first)))
     second = sum(map(int, list(second)))
     return first == second
 
-n = 1230
+n = 1230124560
 print(isLucky(n))
 
 ## -- SORT BY HEIGHT
-def sortByHeight(a):
-    b = sorted([i for i in a if i!=-1])
+def sortByHeight(height):
+    b = sorted([i for i in height if i!=-1])
     j = 0
-    for i in range(len(a)):
-        if a[i] == -1:
+    for i in range(len(height)):
+        if height[i] == -1:
             pass
         else:
-            a[i]=b[j]
+            height[i]=b[j]
             j+=1
-    return a
+    return height
 
 a = [-1, 150, 190, 170, -1, -1, 160, 180]
 sortByHeight(a)
