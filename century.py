@@ -1,4 +1,5 @@
 ## THE Journey Begins
+# ========================
 def centuryFromYear(year):
     cen = 0
     cen = (year + 99)//100
@@ -15,6 +16,7 @@ def checkPalindrome(inputString):
 
 
 ## Edge of the Ocean
+# ========================
 
 def adjacentElementsProduct(inputArray):
     ele = len(inputArray) 
@@ -115,7 +117,6 @@ def allLongestStrings(inputArray):
 inputArray = ["aba", "aa", "ad", "vcd", "aba"]
 allLongestStrings(inputArray)
 
-
 #-----------
 def common_character_count(str1: str, str2: str):
     str1_set = set(str2)
@@ -159,12 +160,16 @@ a = [-1, 150, 190, 170, -1, -1, 160, 180]
 sortByHeight(a)
 
 ## ------------ REVERSE IN PARENTHESES
-import re
+import re # las funciones de RE es la clave
+
 def reverseParentheses(s):
     while "(" in s:
         match = re.search('\([^()]*\)', s)
+        print(match)
         match_string = match.group(0)[1: len(match.group(0)) - 1]
+        print(match_string)
         reversed_match_string = match_string[::-1]
+        print(reversed_match_string)
         s = s[:match.start()] + reversed_match_string + s[match.end():]
     return s
 
@@ -174,15 +179,7 @@ b = "foo(bar)baz(blim)"
 reverseParentheses(a)
 reverseParentheses(b)
 
-## 
-
-def alternatingSums(a):
-    res = ()
-    if len(a) == 1:
-        res = [a,0]
-    else:
-        res = [sum(a[i : : 2]) for i in range(len(a)//(len(a)//2))]
-    return res
+## Suma alternativa
 
 def alternatingSums2(a):
     return [sum(a[::2]),sum(a[1::2])]
@@ -191,37 +188,39 @@ alternatingSums(b)
 a = [150,10,40,0]
 b= [190]
 
-## ADD A BORDER
+## Exploring the Waters
+# ========================
+## ADD A BORDER This is a real border
 
 def addBorder(picture):
     output = []
     border = ""
     for i in range(0,len(picture[0])+2):
-        border += "*"
+        border += "="
     output.append(border)
     for i in range(0,len(picture)):
-        output.append("*"+picture[i]+"*")
-    
+        output.append("||"+picture[i]+"||")
     output.append(border)
-    
     return output
 
-picture = ["abc",
-            "ded"]
+picture = ["abc", 
+           "ded", 
+           "els",
+           "dan"]
 addBorder(picture)
 
-## ARE SIMILAR
+## ARE SIMILAR if we swapping numbers
 
 def areSimilar(a, b):
     count = 0
     list_a = []
     list_b = []
     for i in range(len(a)):
-        if (a[i]!= b[i]):
+        if (a[i]!= b[i]):  # solo cuentan los no iguales
             count +=1
             list_a.append(a[i])
             list_b.append(b[i])
-
+            print(list_a, list_b)
     if (count ==0):
         return True 
     elif count ==2: 
@@ -229,8 +228,12 @@ def areSimilar(a, b):
     else:
         return False
 
-a = [1, 2, 3,5]
-b = [2, 1, 3,6]
+
+a = [2,1,3,5,4]
+b = [2,1,5,3,4]
+
+areSimilar(a, b)
+
 
 ## ARRAY CHANGE
 def arrayChange(inputArray):
