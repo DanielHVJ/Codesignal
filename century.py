@@ -255,31 +255,44 @@ def arrayChange(inputArray):
         if i <= q:
             sum += q-i+1
             q = q+1
-        else:
+            print(q)
+        else:         # 10 > 2, q=10 y a partir de ahi tengo el 12
             q = i
+            
     return sum
 
-areSimilar(a,b)
+
+a = [2,1, 10, 1]
+arrayChange(a)
+
 
 ## REARRANGING
 
 def palindromeRearranging(inputString):
     char_occur = {} 
     
-    for inp in inputString:
-        if inp not in char_occur:
-            char_occur[inp] = 1
+    for let in inputString:
+        if let not in char_occur:
+            char_occur[let] = 1
+            print(char_occur)
         else:
-            char_occur[inp] += 1
+            char_occur[let] += 1
+            print(char_occur)
 
+# BUsca impares pero el resto no entiendo
     odd_occ = [las for las in char_occur if char_occur[las] % 2]
-    if len(odd_occ) > 1:
+    print(odd_occ)
+    if len(odd_occ) >= 1:
         return False
     else:
         return True
     
-inputString = "aabb"
-palindromeRearranging(inputString)
+a = "aabberrqwdw"
+palindromeRearranging(a)
+
+
+## Island of Knowledge
+# ===============================
 
 ## EQUALLY STRONG
 def areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight):
@@ -293,6 +306,7 @@ def arrayMaximalAdjacentDifference(a):
     diffs=[abs(a[i]-a[i+1]) for i in range(len(a)-1)]
     return max(diffs)
 
+a = [1,2,2,3,3]
 
 ## Check IP address
 
