@@ -8,7 +8,7 @@ def centuryFromYear(year):
 
 def checkPalindrome(inputString):
     return inputString == inputString[::-1]
-    
+
     if checkPalindrome(inputString):
         print("true")
     else:
@@ -33,10 +33,11 @@ adjacentElementsProduct([3, 6, -2, -5, 7, 3])
 def shapeArea(n):
     if n == 1:
         return 1
-    area = (n*n) + ((n-1)*(n-1))
-    return area
+    return (n*n) + ((n-1)*(n-1))
 
 shapeArea(2)
+
+
 
 def makeArrayConsecutive2(statues):
     return (max(statues)-min(statues)+1)-len(statues)
@@ -44,6 +45,7 @@ def makeArrayConsecutive2(statues):
 ## Siempre se añade un 1 dentro o fuera    
 
 makeArrayConsecutive2([2,3,8,4])
+
 
 ## NO ENTIENDO
 
@@ -113,7 +115,7 @@ print(summ)
 
 def allLongestStrings(inputArray):
     maxLen = 0
-    for i in range(0,len(inputArray)):
+    for i in range(len(inputArray)):
         maxLen = max(maxLen, len(inputArray[i])) # len es el key= key function where each argument 
                                                 #is passed, and comparison is performed based on its return value
     return [i for i in inputArray if len(i)==maxLen]
@@ -121,12 +123,9 @@ def allLongestStrings(inputArray):
 inputArray = ["aba", "aa", "ad", "vcd", "aba"]
 allLongestStrings(inputArray)
 
-<<<<<<< HEAD
-#-----------
-=======
 
 #----------- NO ENTIENDO
->>>>>>> fdd4d18f3906165d65e01a4c0023606e1da865e1
+
 def common_character_count(str1: str, str2: str):
     str1_set = set(str2) #para que sea iterable
     result = 0
@@ -196,7 +195,7 @@ reverseParentheses(b)
 def alternatingSums2(a):
     return [sum(a[::2]),sum(a[1::2])]
 
-alternatingSums(b)
+alternatingSums2(b)
 a = [150,10,40,0]
 b= [190]
 
@@ -338,14 +337,12 @@ def avoidObstacles(inputArray):
 
 
 def boxBlur(image):
-
 #empty array to place values within the 3x3 matrix
   threeByThreeVals = []
 #empty array to place the average of values within 3x3 matrix
   threeByThreeAvgs = []
 #empty array to place average values into a matrix
   blurredMatrix = []
-
   #find the values of elements within all 3x3 matrixes and place in threeByThreeVals list
   #start loops at 1 and stop at one before the length's end since no elements at the ends 
   #can be the center of a 3x3 matrix
